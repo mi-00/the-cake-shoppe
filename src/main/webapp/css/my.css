@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+.menu a{color: #a0145d; font-size: x-large;}
+.menu a:hover{color: #820734;}
+.pink{ background: pink;text-align:center;margin:0px auto;}
+.cake-name{font-size:x-large;color:#a80d46;text-align:center;}
+.cake-ingredients{font-size:large;color:#d61159;white-space: nowrap;text-overflow: ellipsis;}
+.cake-method{font-size:large;color:#d61159;white-space: nowrap;text-overflow: ellipsis;}
+.cake-price{font-size:large;color:#d61159;background-color:#f4b2d0;white-space: nowrap;text-overflow: ellipsis;}
+.darkpink{background-color: #84476c;}
+.darkpink:hover{background: #d80f88;}
+.pagination-pink{background: #e51d1d !important;}
+.cake-pink, .cake-pink td, .cake-pink th{background-color: #fc80d5;color:#380a29;}
+.cake-pink-h3{color:#8c1065;}
+.th-pink{color:#601147}
+#front-body{background-image:url("../images/2xxxlc2r.jpg");
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-attachment: fixed;
+    background-position: center;
+    background-color:#6c9ae2;}
+.front-link{font-size:xx-large;color:white;margin-top:22%;}
+.front-link a{color:white;}
+
+@media (max-width: 639px) {
+  .menu li{display: table;}
+  .front-link{margin-top:65%;}
+}
