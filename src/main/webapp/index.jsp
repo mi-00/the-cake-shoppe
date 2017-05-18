@@ -16,7 +16,8 @@
 <body id='front-body'>
 
 	<div class="front-link text-center">
-		<a href="http://localhost:8080/MihaelasCakeShoppe/ProductsServlet?action=all&page=1">ENTER</a>
+		<a
+			href="/ProductsServlet?action=all&page=1">ENTER</a>
 	</div>
 
 
