@@ -22,7 +22,7 @@
 		</div>
 		<div class="small-10 columns">
 			<img
-				src="http://localhost:8080/MihaelasCakeShoppe/BasePathImgServerServlet?image=${cake.imgName}">
+				src="/BasePathImgServerServlet?image=${cake.imgName}">
 		</div>
 	</div>
 
@@ -50,7 +50,7 @@
 		<div class="small-1 columns"></div>
 	</div>
 
-	<form action="./ProductsServlet?action=update" method="post">
+	<form action="/ProductsServlet?action=update" method="post">
 
 		<fieldset>
 			<div class="row">

@@ -14,7 +14,7 @@
 	
 	<div class="row">
 		<h3>Your cart is empty</h3>
-		<a href="http://localhost:8080/MihaelasCakeShoppe/ProductsServlet?action=all&page=1">Shop
+		<a href="/ProductsServlet?action=all&page=1">Shop
 			for Cakes</a>
 	</div>
 </body>

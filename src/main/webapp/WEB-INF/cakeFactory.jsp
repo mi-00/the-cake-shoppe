@@ -12,7 +12,7 @@
 
 <jsp:include page="header.html"/>
 
-	<form action="./ProductsServlet?action=add" method="post"
+	<form action="/ProductsServlet?action=add" method="post"
 		enctype='multipart/form-data'>
 
 		<fieldset>

@@ -13,7 +13,7 @@
 	<div class="row">
 		<div class="medium-5 small-12 columns">
 			<img
-				src="http://localhost:8080/MihaelasCakeShoppe/ImageServerServlet?image=30351.jpg">
+				src="/ImageServerServlet?image=30351.jpg">
 		</div>
 		<div class="medium-7 small-12 columns">
 			<h3>Unauthorized Access Prohibited</h3>

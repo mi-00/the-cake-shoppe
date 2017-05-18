@@ -16,7 +16,7 @@
 
 		<p>Your order has been registerer. Thank you for shopping with us!</p>
 		<p>Please return your feed-back.</p>
-		<a href="http://localhost:8080/MihaelasCakeShoppe/ProductsServlet?action=all">Shop
+		<a href="/ProductsServlet?action=all">Shop
 			for Cakes</a>
 	</div>
 </body>

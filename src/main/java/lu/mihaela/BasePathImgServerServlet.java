@@ -17,12 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 public class BasePathImgServerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/*
-	static String[] images = { "black_forest", "carrot", "cassata", "cheese", "chocolate_mousse_cheese",
-			"chocolate-cheese", "chocolate", "cremeschnitte", "dark_chocolate", "dobos", "gingerbread", "lemon",
-			"macaron", "millefeuille", "pancake", "red_velvet", "sacher", "savarina", "tarte_tatin", "tiramisu" };
-			*/
-
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */

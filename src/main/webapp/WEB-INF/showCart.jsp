@@ -18,7 +18,7 @@
 			<div class="row">
 				<h3>Your Cart is empty.</h3>
 				<a
-					href="http://localhost:8080/MihaelasCakeShoppe/ProductsServlet?action=all&page=1">Shop
+					href="/ProductsServlet?action=all&page=1">Shop
 					for Cakes</a>
 			</div>
 		</c:when>
@@ -64,9 +64,9 @@
 						</tbody>
 					</table>
 					<a
-						href="http://localhost:8080/MihaelasCakeShoppe/ProductsServlet?action=checkout"
+						href="/ProductsServlet?action=checkout"
 						class="button hollow secondary expanded">Buy</a> <a
-						href="http://localhost:8080/MihaelasCakeShoppe/ProductsServlet?action=clearCart"
+						href="/ProductsServlet?action=clearCart"
 						class="alert hollow button expanded">Delete Cart</a>
 				</div>
 				<div class="medium-2 small-12 columns">&nbsp;</div>

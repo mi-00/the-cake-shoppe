@@ -27,7 +27,7 @@
 				<div class="row">
 					<div class="medium-6 small-12 columns">
 						<img
-							src="http://localhost:8080/MihaelasCakeShoppe/BasePathImgServerServlet?image=${cake.imgName}">
+							src="/BasePathImgServerServlet?image=${cake.imgName}">
 					</div>
 					<div class="medium-6 small-12 columns">
 
