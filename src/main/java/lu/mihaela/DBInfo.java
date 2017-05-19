@@ -1,7 +1,7 @@
 package lu.mihaela;
 
 public class DBInfo {
-	static String host = "localhost";
+	static String host = "mysql";//because in openshift, i named db service like this
 	
 	static String DBname = "mihaelas_cake_shoppe";
 	static int port = 3306; // This is for MySQL
