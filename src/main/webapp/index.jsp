@@ -17,7 +17,7 @@
 
 	<div class="front-link text-center">
 		<a
-			href="/ProductsServlet?action=all&page=1">ENTER</a>
+			href="./ProductsServlet?action=all&page=1">ENTER</a>
 	</div>
 
 
