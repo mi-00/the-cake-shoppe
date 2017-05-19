@@ -15,7 +15,7 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
   
-  	<security-constraint>
+  <!--	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>Admin Part</web-resource-name>
 			<url-pattern>/ProductsServlet</url-pattern>
@@ -44,5 +44,5 @@
 	</login-config>
 	<error-page>
 		<location>/WEB-INF/unauthorized.jsp</location>
-	</error-page>
+	</error-page> -->
 </web-app>
