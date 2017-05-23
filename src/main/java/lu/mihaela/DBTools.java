@@ -1,5 +1,7 @@
 package lu.mihaela;
 
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -7,8 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
-
 import lu.mihaela.Cake;
 import lu.mihaela.DBInfo;
 
@@ -98,6 +98,9 @@ public class DBTools {
 
 				double price = Double.parseDouble(result.getString("price"));
 				cake.setPrice(price);
+
+				Blob image = result.getBlob("image");
+				cake.setImage(image);
 				
 				//add bean to list
 				list.add(cake);
@@ -158,6 +161,9 @@ public class DBTools {
 
 					double price = result.getDouble("price");
 					cake.setPrice(price);
+
+					Blob image = result.getBlob("image");
+					cake.setImage(image);
 				}
 			} catch (SQLException e) {
 				System.out.println("Data retrieving/reading problem: " + e);
@@ -175,20 +181,72 @@ public class DBTools {
 
 
 	//*********************
+	//getting image from other_images table
+	Image getImage(int imageId){
+		Image image = new Image();
+		PreparedStatement pstmt = null;
+		ResultSet result = null;
+		
+		Connection connection = getConnection();
+		try {
+			pstmt = connection.prepareStatement("SELECT * FROM other_images WHERE id=?");
+			pstmt.setInt(1, imageId);
+		} catch (SQLException e) {
+			System.out.println("Statement creation error: " + e);
+			return null;
+		}
+		
+		try {
+			result = pstmt.executeQuery();
+		} catch (SQLException e) {
+			System.out.println("Execution error: " + e);
+			return null;
+		}
+
+		try {
+			while (result.next()) {
+				//extract all bean properties from result set, and set bean's fields
+				int id = result.getInt("id");
+				image.setId(id);
+				
+				String imgName = result.getString("img_name");
+				image.setImgName(imgName);
+
+				Blob binaryImage = result.getBlob("image");
+				image.setImage(binaryImage);
+			}
+		} catch (SQLException e) {
+			System.out.println("Data retrieving/reading problem: " + e);
+		}
+
+		try {
+			result.close();
+			pstmt.close();
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return image;//the image as binary
+	}
+		
+
+
+	//*********************
 	//Again PreparedStatement because the data comes from user 
-	void addCake(String img_name, String name, String ingredients, String method, double price){// add
+	void addCake(String img_name, String name, String ingredients, String method, double price, InputStream image){// add
 		
 		Connection connection = getConnection();
 		
 		try {// Statement.RETURN_GENERATED_KEYS as 2nd arg to prep stmt is for returning generated ID of last inserted row
 			PreparedStatement statement = 
-					connection.prepareStatement("INSERT INTO cakes (img_name, name, ingredients, method, price) VALUES (?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+					connection.prepareStatement("INSERT INTO cakes (img_name, name, ingredients, method, price, image) VALUES (?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
 
 			statement.setString(1, img_name);
 			statement.setString(2, name);
 			statement.setString(3, ingredients);
 			statement.setString(4, method);
 			statement.setDouble(5, price);
+			statement.setBlob(6, image);
 			
 			statement.executeUpdate(); 
 			
@@ -207,20 +265,21 @@ public class DBTools {
 
 	//*********************
 	//We use PreparedStatement because the data comes from user; not used at the mo
-	void updateCake(long id, String imgName, String name, String ingredients, String method, double price){//update
+	void updateCake(long id, String imgName, String name, String ingredients, String method, double price, InputStream image){//update
 		
 		Connection connection = getConnection();
 		
 		try {
 			PreparedStatement pstmt = 
-					connection.prepareStatement("UPDATE cakes SET img_name=?, name=?, ingredients=?, method=?, price=? WHERE id=?");
+					connection.prepareStatement("UPDATE cakes SET img_name=?, name=?, ingredients=?, method=?, price=? image=? WHERE id=?");
 
 			pstmt.setString(1, imgName);
 			pstmt.setString(2, name);
 			pstmt.setString(3, ingredients);
 			pstmt.setString(4, method);
 			pstmt.setDouble(5, price);
-			pstmt.setLong(6, id);//should change type to long in DB; int at the mo
+			pstmt.setBlob(6, image);
+			pstmt.setLong(7, id);//should change type to long in DB; int at the mo
 			
 			pstmt.executeUpdate();
 			
