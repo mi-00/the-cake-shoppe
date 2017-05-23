@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width" />
 <title>On Sale in Your Shop Today</title>
 <link rel="stylesheet" href="css/foundation.css">
 <link rel="stylesheet" href="css/my.css">
