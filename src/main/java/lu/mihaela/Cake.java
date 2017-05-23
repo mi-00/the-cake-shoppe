@@ -1,5 +1,8 @@
 package lu.mihaela;
 
+import java.sql.Blob;
+
+
 public class Cake {
 	
 	static final long serialVersionUID = 12345L;
@@ -10,7 +13,9 @@ public class Cake {
 	
 	private double price;
 	
-	public void Cake(){};
+	private Blob image;
+	
+	public Cake(){};
 
 	public long getId() {
 		return id;
@@ -60,5 +65,13 @@ public class Cake {
 	public void setPrice(double price) {
 		// TODO Auto-generated method stub
 		this.price = price;
+	}
+
+	public Blob getImage() {
+		return image;
+	}
+
+	public void setImage(Blob image) {
+		this.image = image;
 	}
 }
