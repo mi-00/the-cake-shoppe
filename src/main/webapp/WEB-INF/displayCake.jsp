@@ -21,7 +21,7 @@
 		</div>
 		<div class="small-10 columns">
 			<img
-				src="/BasePathImgServerServlet?image=${cake.imgName}">
+				src="/DBImageServerServlet?cakeId=${cake.id}">
 		</div>
 	</div>
 

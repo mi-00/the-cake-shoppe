@@ -176,7 +176,7 @@ public class DBTools {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			return cake;//the list with cakes	
+			return cake;//the cake
 		}
 
 
