@@ -51,7 +51,7 @@ public class DBImageServerServlet extends HttpServlet {
 			image = cake.getImage();// it's binary data now; can't put it as
 			// value of src param
 			int imgLength = (int) image.length();
-			System.out.println("imgLen = " + imgLength);
+			//System.out.println("imgLen = " + imgLength);
 			byte[] imgAsBytes = new byte[imgLength];
 			InputStream readImg = image.getBinaryStream();
 			int index=readImg.read(imgAsBytes, 0, imgLength);

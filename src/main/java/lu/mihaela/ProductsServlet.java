@@ -208,7 +208,7 @@ public class ProductsServlet extends HttpServlet {
 
 		switch (action.toLowerCase()) {
 		case "add":
-			dispatcher = request.getRequestDispatcher("/ImageUploaderServlet");
+			dispatcher = request.getRequestDispatcher("/DBImageUploaderServlet");
 			dispatcher.forward(request, response);
 			return;
 		case "update":
